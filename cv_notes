@@ -1,0 +1,50 @@
+Worked as DevOps engineer for testing high-speed analytics and data services platform application :
+• Prepared and maintained QA and Dev environments based on RedHat 7 and Oracle Linux 7
+• Developed puppet modules for deployment automation and environment preparation
+• Configured and supported Jenkins jobs for running tests and pipeline for release automation
+• Prepared releases for QA ( including RPM Build )
+• Wrote bash scripts for automation
+• Communicated with foreign customers on the everyday basis
+• Experienced working in Scrum team
+
+Supported production CI\CD tools:
+•Administration and support production infrastructure based on CentOS:
+ GitLab servers, SVN servers, Jenkins server, Fisheye/Crucible server, Sonar servers, Artifactory servers;
+•Resolving different types of events followed ITIL principles:
+incidents, problems, access management, environment, and application issues.
+Worked on services improvement to provide high availability, stability, clear documentation, decrease amount of incidents, minimize manual work;
+
+Restored service of package tours:
+• Restored broken service from scratch based only on GitHub repo
+• Installed and maintained Redis, PostgreSQL, Elasticsearch
+• Cloud infrastructure maintenance based on DigitalOcean
+• Set up servers based on ubuntu
+• Used ruby deploy (capistrano)
+• Configured web servers (nginx, puma)
+• Managed certificates
+
+Automated localization of application:
+• Built pipeline for automatic translation service
+• Administered job in the bamboo
+• Worked with poeditor API
+• Used regexp to parse JSON output
+• Worked with bitbucket
+
+LAMP:
+  prepared standart LAMP stack on Digital Ocean
+  appache tomcat\mysql\phpmyadmin
+
+worked with API\regexp
+scrum
+vagrant\docker
+whole pipeline process in jenkins :
+-copy dev files (from remote server to build server)
+-checkout scripts for rpmbuild (builded rpms (regexp spec file  ))
+-upload rpms to artifactory (art upload)
+-checkout and run script for git tagging (with regexp)
+-add new stack to puppet (compass)
+
+Poeditor:
+  api: send POST with curl and get JSON
+  job: checked new files for translation_>pars new words and send to poeditor>
+       >checked if new translations> get only new words>commit them to bitbucket

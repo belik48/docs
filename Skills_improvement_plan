@@ -1,0 +1,28 @@
+docker plan:
+1) docs (file systems (overlay fs))
+2) dockerfile (run, entry point, cmd) (layewrs) (try toi wright few files)
+3) commands (docker run ssh)
+4) run docker (with jenkins) coonect file transfer network
+5) check network betwenn containers
+6) docker compose
+7) touch docker swarm (probalby use for deploy) --going to die
+8) volumes - connect hosts folders
+9) try to use diff versdions for jenkinsd ( jobs on host folder)
+10)loging (docker logs)
+
+also:
+  jenkins try catch
+aws
+network , users,
+monitoring
+terraform - easy (1 week)
+prometheus
+serverless (лямбда)
+
+mionitoring elk efk ()
+kuber
+nginx tomcat appache
+
+Linux administration techotrack
+(1 hz;2the best ;3 -dns,dig,network TROUBLESHOOTING watch on rewind;4 RPMBUILD,init,systemd;5 theory web srvs(queryies)DB HZ);6 mbr-gpt\raid\lvm\ext4;
+7 dns-bind configuration\ntp\pam\ldap auth\dhcp\kickstart;8-9 SALT\backup\bacula;10 smtp\postfix;11 os resource
