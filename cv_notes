@@ -37,7 +37,7 @@ LAMP:
 worked with API\regexp
 scrum
 vagrant\docker
-whole pipeline process in jenkins :
+whole pipeline process in jenkins (TR):
 -copy dev files (from remote server to build server)
 -checkout scripts for rpmbuild (builded rpms (regexp spec file  ))
 -upload rpms to artifactory (art upload)
@@ -48,3 +48,27 @@ Poeditor:
   api: send POST with curl and get JSON
   job: checked new files for translation_>pars new words and send to poeditor>
        >checked if new translations> get only new words>commit them to bitbucket
+
+
+ANSWERS:
+!!from a position of strength!! EVEN if I don't know smth I will learn it very quickly
+  life_path(tell me about yourself (2 min))(where are you from and what your direction):
+    Education; what has been done after that; why DevOps;(story starts from the past and finish in the future)
+  why you leaving current job:
+    was very comfortable to work but push myself to leave because
+    stuck on project where I can't evolve and use new technologies for me
+  why should we hire you:
+  the hardest troubleshooting:
+  typical day:
+  tell me about your weaknesses:
+QUESTIONS:
+    1)Какое ваше определение идеального кандидата(опишите)?
+    2)В развитие 1го (пытаюсь понять Я хуже или лучше чем вы ожидали)
+      Что вы хотите увидеть после испытательного срока?(20 настроенных серверовб 500 строчек кода)
+    3)Что вас заинтересовало в моем резюме?
+Вопросы о компании:
+    1) сколько лет, насколько стабильны, много ли проектов
+    2) кто конкуренты
+    3) состав проекта,  планируют ли нанимать чем занимаются существующие, --реплейсмент или новая позиция(какие обязанности!),
+    4) тулы на проекте
+    5) есть ли инфра или с 0
