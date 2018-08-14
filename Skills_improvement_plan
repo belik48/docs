@@ -69,28 +69,49 @@ docker notes:
         build with dockerfile will use cache if commands in dockerfile was previosly run(cahed steps)
         commands RUN(run command while building image);ENV(set variable with spaces);EXPOSE(port from container exposed but not passed through);
         CMD(run commands after container being run E.G.["command","arg1","arg2"])
---SWARM.Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with
+--Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with
         multiple managers and workers. Each member of a swarm is a Docker daemon, and the daemons all communicate using the Docker API.
         A service allows you to define the desired state, such as the number of replicas of the service that must be available at any given time.
         By default, the service is load-balanced across all worker nodes.
         To the consumer, the Docker service appears to be a single application.
---docker run -- run containers(or command inside)based on images
-        (if run with "-it"you will connect to container but it will be shut after you will exit)
-        ps list containers (-a all that been started before)
-        pull - download image(snapshot) from dockerhub to local
-        search --search images on dockerhub in terminal
-        attach --attach terminal to the process that container is running(after ctrl+c will shut process and container)
-        inspect --json about container
-        exec --run command(E.G. /bin/bash) inside container (without connecting)exiting will not cause shutdown of the container
-          -it interactivly connect to container (docker exec -it 'Container name' 'command') (cli inside container)
-        --name to add my own name to the running container
-        rm\rmi -remove container(rm)\image(rmi) (by ID or name). Can't remove images (without force "-f")if you have containers based on them.
-        -d in background(disconnected)
-        -e execute smth (-d-e The container will continue to run as long as the argument is running, as soon as the argument stops the container will exit.)
-        ps -a -q shows IDs of all not currently not running containers(docker rm `docker ps -a -q`)
-        -P all container ports forwarded to the local host though randomly picked local ports in the 32768 to 65000 range.Ports info at `docker ps`
-        -p "local port":"containers port", -//-  bind local port with container port
-        port (CONTAINER) $CONTAINERPORT -Will show the variable of the CONTAINERPORT which is the open ports of the container and the random port links to the local host.
-        -v 'path to local dir':'path where to mount inside the container' to mount local dir in container(changes apply on the fly)
-        build -t 'docker hub accout'/imagename '.(path to Dockerfile)'
- to install - add docker repo;install docker-engine;add user to docker group
+        A service only runs one image, but it codifies the way that image runs—what ports it should use,
+        how many replicas of the container should run so the service has the capacity it needs, and so on.
+        Scaling a service changes the number of container instances running that piece of software,
+        assigning more computing resources to the service in the process. "docker service ps"
+        load balancer
+--Task is a single container running in a service. Tasks are given unique IDs that numerically increment,
+        up to the number of replicas you defined in docker-compose.yml.
+--docker run # run containers(or command inside)based on images
+        #(if run with "-it"you will connect to container but it will be shut after you will exit)
+        ps #list containers (-a all that been started before)
+        pull #download image(snapshot) from dockerhub to local
+        search #search images on dockerhub in terminal
+        attach #attach terminal to the process that container is running(after ctrl+c will shut process and container)
+        inspect #json about container
+        exec #run command(E.G. /bin/bash) inside container (without connecting)exiting will not cause shutdown of the container
+          -it #interactivly connect to container (docker exec -it 'Container name' 'command') (cli inside container)
+        --name #to add my own name to the running container
+        rm\rmi #remove container(rm)\image(rmi) (by ID or name). Can't remove images (without force "-f")if you have containers based on them.
+        -d #in background(disconnected)
+        -e #execute smth (-d-e The container will continue to run as long as the argument is running, as soon as the argument stops the container will exit.)
+        ps -a -q #shows IDs of all not currently not running containers(docker rm `docker ps -a -q`)
+        -P #all container ports forwarded to the local host though randomly picked local ports in the 32768 to 65000 range.Ports info at `docker ps`
+        -p "local port":"containers port", -//-  #bind local port with container port
+        port (CONTAINER) $CONTAINERPORT #Will show the variable of the CONTAINERPORT which is the open ports of the container and the random port links to the local host.
+        -v 'path to local dir':'path where to mount inside the container' #to mount local dir in container(changes apply on the fly)
+        build -t 'docker hub accout'/imagename . #tag .path to Dockerfile
+        stop container stop <hash>           # Gracefully stop the specified container
+        container kill <hash>         # Force shutdown of the specified container
+        login             # Log in this CLI session using your Docker credentials
+        tag <image> username/repository:tag  # Tag <image> for upload to registry
+        push username/repository:tag            # Upload tagged image to registry
+        stack ls      # List stacks or apps
+              deploy -c <composefile> <appname>  # Run the specified Compose file
+              rm <appname>   # Tear down an application
+        service ls    # List running services associated with an app
+                ps <service> # List tasks associated with an app
+        swarm leave --force      # Take down a single node swarm from the manager
+
+
+
+ to install - add docker repo;install docker-engine;add user to docker group; additional docker-compose; additional docker-machine
