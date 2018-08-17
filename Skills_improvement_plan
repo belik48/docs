@@ -78,9 +78,16 @@ docker notes:
         how many replicas of the container should run so the service has the capacity it needs, and so on.
         Scaling a service changes the number of container instances running that piece of software,
         assigning more computing resources to the service in the process. "docker service ps"
-        load balancer
+        load balancer balance connection across nodes and containers 
 --Task is a single container running in a service. Tasks are given unique IDs that numerically increment,
         up to the number of replicas you defined in docker-compose.yml.
+--A swarm is a group of machines that are running Docker and joined into a cluster.
+        After that has happened, you continue to run the Docker commands you’re used to,
+        but now they are executed on a cluster by a swarm manager. The machines in a swarm can be physical or virtual.
+        After joining a swarm, they are referred to as nodes.
+        Swarm managers are the only machines in a swarm that can execute your commands,
+        or authorize other machines to join the swarm as workers. Workers are just there to provide capacity and
+        do not have the authority to tell any other machine what it can and cannot do.
 --docker run # run containers(or command inside)based on images
         #(if run with "-it"you will connect to container but it will be shut after you will exit)
         ps #list containers (-a all that been started before)
@@ -110,8 +117,13 @@ docker notes:
               rm <appname>   # Tear down an application
         service ls    # List running services associated with an app
                 ps <service> # List tasks associated with an app
+        swarm init # to enable swarm mode and make your current machine a swarm manager
         swarm leave --force      # Take down a single node swarm from the manager
+docker-machine create --driver virtualbox myvm1 # Create a VM
+               env myvm1                # View basic information about your node
+               ssh myvm1 "docker node ls"         # List the nodes in your swarm
+               ssh myvm1 "docker swarm init --advertise-addr <myvm1 ip>" #to add host to swarm as manager (note that you will get TOKEN)
 
 
 
- to install - add docker repo;install docker-engine;add user to docker group; additional docker-compose; additional docker-machine
+ to install - add docker repo;install docker-engine;add user to docker group; additional docker-compose; additional docker-machineb
