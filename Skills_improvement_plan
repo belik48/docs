@@ -77,8 +77,9 @@ docker notes:
         A service only runs one image, but it codifies the way that image runs—what ports it should use,
         how many replicas of the container should run so the service has the capacity it needs, and so on.
         Scaling a service changes the number of container instances running that piece of software,
-        assigning more computing resources to the service in the process. "docker service ps"
-        load balancer balance connection across nodes and containers 
+        assigning more computing resources to the service in the process. "docker service ps".
+        to add more services to your stack, you insert them in your Compose file.
+        load balancer balance connection across nodes and containers (desribes in compose .yml file)
 --Task is a single container running in a service. Tasks are given unique IDs that numerically increment,
         up to the number of replicas you defined in docker-compose.yml.
 --A swarm is a group of machines that are running Docker and joined into a cluster.
