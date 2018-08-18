@@ -1,0 +1,33 @@
+Mound&Blade NW
+Main solution for linux
+https://steamcommunity.com/app/48700/discussions/0/45350791121526910/
+sudo apt-get install libqtgui4:i386 (then copy to MB steams folder)
+
+So, every time I've tried to start configuration instead of game - I had nothing. Problem was:
+
+Cannot mix incompatible Qt library (version 0x40806) with this library (version 0x40801)
+Aborted (core dumped)
+
+What have I done...
+Open the terminal, write:
+
+$ locate libQtCore
+
+then, you should have something like that:
+
+/usr/lib/i386-linux-gnu/libQtCore.so.4
+/usr/lib/i386-linux-gnu/libQtCore.so.4.8
+/usr/lib/i386-linux-gnu/libQtCore.so.4.8.6
+
+All you need is libQtCore.so.4 and libQtGui.so.4 (they are in same folder).
+Run this command:
+
+$ rm "$HOME/.steam/SteamApps/common/MountBlade Warband/libQtCore.so.4" && rm "$HOME/.steam/SteamApps/common/MountBlade Warband/libQtGui.so.4" && cp /usr/lib/i386-linux-gnu/libQtCore.so.4 "$HOME/.steam/SteamApps/common/MountBlade Warband" && cp /usr/lib/i386-linux-gnu/libQtGui.so.4 "$HOME/.steam/SteamApps/common/MountBlade Warband"
+
+After that, everything should be working. :)
+(Sorry for my English. I'm russian.)
+
+(To dev's. Can you make some kind of detection of this libs and use them instead of yours? Thanks in advance for answer) 
+
+Backup solution:
+https://steamcommunity.com/app/48700/discussions/0/617319461013569268/?l=russian
