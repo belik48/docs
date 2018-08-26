@@ -27,7 +27,12 @@ Linux administration techotrack:
 (1 hz;2the best ;3 -dns,dig,network TROUBLESHOOTING watch on rewind;4 RPMBUILD,init,systemd;5 theory web srvs(queryies)DB HZ);6 mbr-gpt\raid\lvm\ext4;
 7 dns-bind configuration\ntp\pam\ldap auth\dhcp\kickstart;8-9 SALT\backup\bacula;10 smtp\postfix;11 os resource
 
-
+task: jenkins container with not latest version and workspace on the host;
+      own image with dockerfile based on jenkins+ port redirect and host volumes ;
+      docker-compose based on my images with few jenkins and nginx's;
+      deploy on swarm hosts;
+      nginx with proxy on jenkins.hu;
+      ERROR: expose port via docker compose
 docker notes:
 --Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers.
         The use of Linux containers to deploy applications is called containerization.
@@ -128,3 +133,13 @@ docker-machine create --driver virtualbox myvm1 # Create a VM
 
 
  to install - add docker repo;install docker-engine;add user to docker group; additional docker-compose; additional docker-machineb
+What to improve:
+  inode;
+  
+
+ web servers:
+   frontend - user http request, send static or redirect to app server
+   backend - processes logic of requests, iteract with DB
+   DB -storing data
+   nginx asyncronic
+   appache syncronic
