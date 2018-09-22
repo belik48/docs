@@ -1,4 +1,4 @@
-docker plan:
+hdocker plan:
 1) docs (file systems (overlay fs))
 2) dockerfile (run, entry point, cmd) (layewrs) (try to wright few files)
 3) commands (docker run ssh)
@@ -135,7 +135,7 @@ docker-machine create --driver virtualbox myvm1 # Create a VM
  to install - add docker repo;install docker-engine;add user to docker group; additional docker-compose; additional docker-machineb
 What to improve:
   inode;
-  
+
 
  web servers:
    frontend - user http request, send static or redirect to app server
